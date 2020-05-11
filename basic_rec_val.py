@@ -2,11 +2,8 @@
 # -*- coding: utf-8 -*-
 
 '''
-
 Usage:
-
 	$ spark-submit basic_rec_val.py dirname rank regParam k random_seed
-
 '''
 
 import sys
@@ -72,13 +69,12 @@ def basic_rec_val(spark, dirname, rank, regParam, k, random_seed):
 
 if __name__ == '__main__':
 
-	spark = SparkSession \
-			.builder \
-			.appName('basic_rec_val') \
-			.master('yarn') \
-			.config('spark.executor.memory', '8g') \
-			.config('spark.driver.memory', '8g') \
-			.getOrCreate()
+	spark = SparkSession.builder \
+						.appName('basic_rec_val') \
+						.master('yarn') \
+						.config('spark.executor.memory', '8g') \
+						.config('spark.driver.memory', '8g') \
+						.getOrCreate()
 	
 	dirname = sys.argv[1]
 	rank = int(sys.argv[2])

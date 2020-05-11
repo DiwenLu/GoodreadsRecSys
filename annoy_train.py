@@ -3,7 +3,6 @@
 
 '''
 Usage: 
-
 	$ spark-submit annoy_train.py dirname rank regParam n_trees random_seed
 
 Code reference: https://github.com/spotify/annoy

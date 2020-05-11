@@ -7,9 +7,7 @@ We use the Goodreads dataset collected by
 Mengting Wan, Julian McAuley, "Item Recommendation on Monotonic Behavior Chains", RecSys 2018.
 
 Usage:
-
 	$ spark-submit basic_rec_train.py dirname rank regParam random_seed
-
 '''
 
 import sys
@@ -33,13 +31,12 @@ def basic_rec_train(spark, dirname, rank, regParam, random_seed):
 
 if __name__ == '__main__':
 	 
-	spark = SparkSession \
-			.builder \
-			.appName('basic_rec_train') \
-			.master('yarn') \
-			.config('spark.executor.memory', '5g') \
-			.config('spark.driver.memory', '5g') \
-			.getOrCreate()
+	spark = SparkSession.builder \
+						.appName('basic_rec_train') \
+						.master('yarn') \
+						.config('spark.executor.memory', '5g') \
+						.config('spark.driver.memory', '5g') \
+						.getOrCreate()
 	
 	dirname = sys.argv[1]
 	rank = int(sys.argv[2])

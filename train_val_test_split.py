@@ -3,7 +3,6 @@
 
 '''
 Usage:
-
 	$ spark-submit train_val_test_split.py dirname random_seed
 '''
 
@@ -64,7 +63,9 @@ def train_val_test_split(spark, dirname, random_seed):
 
 if __name__ == '__main__':
 
-	spark = SparkSession.builder.appName('basic_rec_train').getOrCreate()
+	spark = SparkSession.builder \
+						.appName('basic_rec_train') \
+						.getOrCreate()
 
 	filename = sys.argv[1]
 	random_seed = int(sys.argv[2])

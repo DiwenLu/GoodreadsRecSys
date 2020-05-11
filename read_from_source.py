@@ -3,7 +3,6 @@
 
 '''
 Usage:
-
 	$ spark-submit read_from_source.py
 '''
 
@@ -24,10 +23,9 @@ def read_csv_from(spark, filename):
 	data.write.mode('overwrite').parquet('full_interactions.parquet')
 
 if __name__ == '__main__':
-	spark = SparkSession \
-				.builder \
-				.appName('read_from_source') \
-				.getOrCreate()
+	spark = SparkSession.builder \
+						.appName('read_from_source') \
+						.getOrCreate()
 
 	filename = 'hdfs:/user/bm106/pub/goodreads/goodreads_interactions.csv'
 	read_csv_from(spark, filename)

@@ -3,7 +3,6 @@
 
 '''
 Usage:
-
 	$ spark-submit annoy_val.py dirname rank regParam k random_seed nns
 '''
 

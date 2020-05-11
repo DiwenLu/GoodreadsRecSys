@@ -2,11 +2,8 @@
 # -*- coding: utf-8 -*-
 
 '''
-
 Usage:
-
 	$ spark-submit downsample.py k random_seed
-
 '''
 
 import sys
@@ -26,7 +23,9 @@ def downsample(spark, k, rand_seed, filename):
 
 if __name__ == '__main__':
 
-	spark = SparkSession.builder.appName('downsample').getOrCreate()
+	spark = SparkSession.builder \
+						.appName('downsample') \
+						.getOrCreate()
 	
 	k = int(sys.argv[1])
 	rand_seed = int(sys.argv[2])

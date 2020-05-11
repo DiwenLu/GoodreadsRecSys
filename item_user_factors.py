@@ -1,11 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 '''
-
 Usage:
-
 	$ spark-submit item_user_factors.py dirname rank regParam
-
 '''
 
 import sys
@@ -26,13 +23,12 @@ def itemFactors(spark, dirname, rank, regParam):
 	userFactors.write.mode('overwrite').parquet(f'{dirname}/userFactors_{rank}_{regParam}_{dirname}.parquet')
 	
 if __name__ == '__main__':
-	spark = SparkSession \
-				.builder \
-				.appName('item_user_factors') \
-				.master('yarn') \
-				.config('spark.executor.memory', '3g') \
-				.config('spark.driver.memory', '3g') \
-				.getOrCreate()
+	spark = SparkSession.builder \
+						.appName('item_user_factors') \
+						.master('yarn') \
+						.config('spark.executor.memory', '3g') \
+						.config('spark.driver.memory', '3g') \
+						.getOrCreate()
 
 	dirname = sys.argv[1]
 	rank = int(sys.argv[2])
