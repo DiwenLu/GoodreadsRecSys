@@ -22,7 +22,7 @@ In this project, we'll use the [Goodreads dataset](https://sites.google.com/eng.
 > Mengting Wan, Julian McAuley, "Item Recommendation on Monotonic Behavior Chains", RecSys 2018.
 
 
-On Dumbo's HDFS, you will find the following files in `hdfs:/user/bm106/pub/goodreads`:
+On Dumbo's HDFS, you will find the following files in `hdfs:/user/netid/.../goodreads`:
 
   - `goodreads_interactions.csv`
   - `user_id_map.csv`
